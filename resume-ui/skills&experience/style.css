@@ -38,6 +38,7 @@ html {
 }
 
 body {
+  margin: 0;
   background-color: var(--clr-primary-800);
   color: var(--clr-neutral-100);
   font-family: var(--ff-base);
@@ -58,7 +59,8 @@ body {
 
 .main-grid {
   display: grid;
-  grid-template-columns: 15rem auto;
+  grid-template-columns: 15rem 1fr;
+  gap: clamp(3rem, 5vw, 10rem);
   grid-auto-flow: dense;
   align-items: center;
   min-height: 100vh;
@@ -71,9 +73,44 @@ main {
 
 aside {
   grid-column: 1;
+  align-self: stretch;
 }
 
 .job-experience {
   display: grid;
   grid-auto-flow: column;
+}
+
+.icon-list {
+  /* border: 1px solid red; */
+  border-left: 1px solid var(--clr-primary-300);
+  padding: 0;
+  margin: 0;
+  margin-left: clamp(5rem, 10vw, 10rem);
+  height: 100%;
+  list-style: none;
+  display: grid;
+  align-content: center;
+  gap: 3rem;
+}
+
+.icon-list > li {
+  position: relative;
+  padding-left: 3rem;
+}
+
+.icon-list > li::before {
+  --_size: .5rem;
+
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(var(--_size) / -2);
+  /* left: 0;
+  transform: translateX(-50%); */
+  width: var(--_size);
+  aspect-ratio: 1;
+  outline: .5rem solid var(--clr-primary-400);
+  border-radius: 50%;
+  background-color: var(--clr-neutral-100);
 }
