@@ -38,6 +38,7 @@ html {
 }
 
 body {
+  background-color: var(--clr-primary-800);
   color: var(--clr-neutral-100);
   font-family: var(--ff-base);
   font-size: var(--fs-400);
@@ -53,4 +54,21 @@ body {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 15rem auto;
+  grid-auto-flow: dense;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+main {
+  grid-column: 2;
+}
+
+aside {
+  grid-column: 1;
 }
